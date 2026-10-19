@@ -23,7 +23,7 @@
 
 ```bash
 # 1. 克隆或下载本项目到本地（任选目录）
-git clone <仓库地址> webpage-snapshot
+git clone https://github.com/jx355/webpicture.git webpage-snapshot
 cd webpage-snapshot
 ```
 
@@ -114,4 +114,10 @@ PYTHON_BIN=python node tests/browser-e2e.mjs                      # 真实浏览
 
 ## 许可
 
-MIT
+本项目采用 [GNU Affero 通用公共许可证第 3 版（AGPL-3.0）](LICENSE) 授权。
+
+要点：
+
+- 你可以自由使用、修改和分发本软件，但**衍生作品必须以相同许可证开源**；
+- AGPL 是强 Copyleft：即使你只是**通过网络提供修改版服务**（未分发二进制），也必须向用户公开对应源码；
+- 完整条款以仓库根目录的 [LICENSE](LICENSE) 文件为准。
