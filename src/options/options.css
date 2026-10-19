@@ -1,0 +1,185 @@
+/* options 样式：浅色管理后台风格 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font: 13px/1.6 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #333;
+  background: #f7f8fa;
+  min-width: 860px;
+}
+
+.ws-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.ws-logo { width: 36px; height: 36px; }
+
+.ws-header h1 { font-size: 16px; font-weight: 500; }
+
+.ws-sub { font-size: 12px; color: #999; margin-top: 2px; }
+
+.ws-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.ws-tab {
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.ws-tab.active { color: #315efb; border-bottom-color: #315efb; }
+
+.ws-tab-page { padding: 20px 24px; }
+
+.ws-toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.ws-search {
+  flex: 1;
+  max-width: 360px;
+  padding: 7px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.ws-search:focus { outline: none; border-color: #315efb; }
+
+.ws-btn-text {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  color: #555;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ws-btn-text:hover { border-color: #315efb; color: #315efb; }
+
+.ws-btn-text.danger:hover { border-color: #c0392b; color: #c0392b; }
+
+.ws-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.ws-table th {
+  text-align: left;
+  padding: 10px 12px;
+  background: #fafbfc;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+  font-size: 12px;
+  color: #666;
+}
+
+.ws-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.ws-table tr:last-child td { border-bottom: none; }
+
+.ws-cell-title {
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ws-cell-url {
+  color: #999;
+  font-size: 11px;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ws-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.ws-badge.mhtml { background: #eef3ff; color: #315efb; }
+.ws-badge.html { background: #eaf6ec; color: #1f7a33; }
+.ws-badge.failed { background: #fdeeee; color: #c0392b; }
+
+.ws-actions { display: flex; gap: 6px; }
+
+.ws-action {
+  padding: 3px 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 11px;
+  color: #555;
+  cursor: pointer;
+}
+
+.ws-action:hover { border-color: #315efb; color: #315efb; }
+
+.ws-action.danger:hover { border-color: #c0392b; color: #c0392b; }
+
+.ws-empty {
+  padding: 40px 0;
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.ws-form { max-width: 560px; }
+
+.ws-form-row { margin-bottom: 18px; }
+
+.ws-form-row label { display: block; font-weight: 500; margin-bottom: 6px; }
+
+.ws-form-row input[type=text],
+.ws-form-row input[type=number],
+.ws-form-row select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.ws-form-row input:focus,
+.ws-form-row select:focus { outline: none; border-color: #315efb; }
+
+.ws-form-tip { margin-top: 4px; font-size: 11px; color: #999; }
+
+.ws-check-row label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  cursor: pointer;
+}

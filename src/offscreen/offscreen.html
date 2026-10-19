@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="i8MZ2O9cbkHK8cLN7YbANy">
+<head data-page-node-id="OPaOVPJ9jCI59Fr1WcsIel">
+  <meta charset="utf-8" data-page-node-id="jxvWnww3t8srrSo6TjUu5y">
+  <title>网页快照下载辅助</title>
+  <style>
+    /* 该页面永不可见，仅作为服务线程的 DOM 替身存在 */
+    body { margin: 0; }
+  </style>
+</head>
+<body data-page-node-id="ZlHYNGQcGE6MBkWQKEb5YJ">
+  <!--
+    为什么需要这个页面（维护者必读）：
+      MV3 的 Service Worker 里没有 URL.createObjectURL（Chrome 已从 worker 全局移除），
+      无法把快照 Blob 变成可下载的 URL；而 offscreen 文档是一个隐藏的扩展页面，
+      拥有完整 DOM 上下文，专门用来创建 / 回收 blob: URL。
+
+    职责边界（非常重要）：
+      - 本页面【只】负责 URL.createObjectURL / URL.revokeObjectURL；
+      - 本页面【不能】调用 chrome.downloads（offscreen 上下文仅暴露 chrome.runtime，
+        强行调用会在顶层脚本直接抛错，导致整个文档起不来）；
+      - 真正的 chrome.downloads.download 由 Service Worker 执行，
+        blob: URL 通过 chrome.runtime 消息传给 SW 使用。
+
+    生命周期：由 Service Worker 按需创建（reasons: ['BLOBS']），
+    每次下载结束后关闭，不长期驻留内存。
+  -->
+  <script src="offscreen.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* popup 样式：浅色、紧凑、与浏览器弹窗尺寸（约 360px）适配 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 360px;
+  font: 13px/1.6 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+.ws-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.ws-logo { width: 32px; height: 32px; }
+
+.ws-header-text h1 { font-size: 14px; font-weight: 500; }
+
+.ws-page-title {
+  font-size: 12px;
+  color: #888;
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ws-section { padding: 12px 14px; border-bottom: 1px solid #f2f2f2; }
+
+.ws-page-url {
+  font-size: 12px;
+  color: #666;
+  word-break: break-all;
+  max-height: 34px;
+  overflow: hidden;
+}
+
+.ws-field { margin-bottom: 10px; }
+
+.ws-label { display: block; font-weight: 500; margin-bottom: 6px; }
+
+.ws-radios { display: flex; flex-direction: column; gap: 4px; }
+
+.ws-radios label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+
+.ws-hint { margin-top: 6px; font-size: 12px; color: #999; min-height: 18px; }
+
+.ws-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 8px 0 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #555;
+}
+
+.ws-btn-primary {
+  width: 100%;
+  padding: 9px 0;
+  border: none;
+  border-radius: 6px;
+  background: #315efb;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ws-btn-primary:hover { background: #2a51e0; }
+
+.ws-btn-primary:disabled { background: #a8bcf5; cursor: not-allowed; }
+
+.ws-btn-secondary {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 0;
+  border: 1px solid #315efb;
+  border-radius: 6px;
+  background: #fff;
+  color: #315efb;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ws-status {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.ws-status.info { background: #eef3ff; color: #315efb; }
+.ws-status.success { background: #eaf6ec; color: #1f7a33; }
+.ws-status.error { background: #fdeeee; color: #c0392b; }
+
+.ws-section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.ws-section-title a { color: #315efb; text-decoration: none; font-size: 12px; }
+
+.ws-recent { list-style: none; }
+
+.ws-recent li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px dashed #f0f0f0;
+  font-size: 12px;
+}
+
+.ws-recent li:last-child { border-bottom: none; }
+
+.ws-recent .ws-r-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #444;
+}
+
+.ws-recent .ws-r-time { color: #999; white-space: nowrap; }
+
+.ws-recent .ws-empty { color: #aaa; justify-content: center; }
+
+.ws-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 14px;
+  font-size: 11px;
+  color: #aaa;
+}

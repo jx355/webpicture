@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网页快照演示页（UTF-8）</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- 外链样式表（内部含 @import 与 url() 引用，验证展平与内联） -->
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- 行内样式：包含 url() 引用，验证行内 CSS 内联 -->
+  <style>
+    .hero {
+      height: 180px;
+      background-image: url('assets/photo.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      margin: 14px 0;
+    }
+    .lazy-box {
+      border: 1px dashed #c7d7f5;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 14px 0;
+      background: #fbfcff;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <img class="avatar" src="assets/avatar.png" alt="站点徽标">
+    <div>
+      <h1>网页快照演示页</h1>
+      <p class="subtitle">UTF-8 编码 · 覆盖全部资源类型</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="imported-banner">
+      这一段样式来自 @import 引入的 imported.css，验证 CSS 展平能力。
+    </section>
+
+    <div class="hero" role="img" aria-label="山景大图"></div>
+
+    <section>
+      <h2>图片资源</h2>
+      <p>下方包含普通图片、懒加载图片（data-src）、srcset 图片、picture/source 图片：</p>
+      <div class="img-row">
+        <img src="assets/photo.png" alt="山景大图" width="280">
+        <img class="lazy" data-src="assets/photo.png" alt="懒加载图片" width="280">
+        <img srcset="assets/avatar.png 1x, assets/photo.png 2x" src="assets/avatar.png" alt="srcset 图片" width="120">
+      </div>
+      <p class="lazy-box">
+        懒加载说明：上方第二张图没有 src 属性，只有 data-src；
+        保存快照时应由扩展自动补上内嵌后的 src，离线打开依然可见。
+      </p>
+    </section>
+
+    <section id="section2">
+      <h2>锚点与链接</h2>
+      <p>
+        <a href="#section2">页内锚点</a> ·
+        <a href="https://example.com" target="_blank" rel="noreferrer">外部链接</a> ·
+        <a href="iframe.html">同站 iframe 页面</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>表单（保存后填写状态不丢）</h2>
+      <form onsubmit="return false">
+        <input type="text" value="已填写的内容" placeholder="文本">
+        <select>
+          <option selected>选项一</option>
+          <option>选项二</option>
+        </select>
+        <textarea rows="2">多行文本内容</textarea>
+        <label><input type="checkbox" checked> 复选框</label>
+        <label><input type="radio" name="r" checked> 单选 A</label>
+      </form>
+    </section>
+
+    <section>
+      <h2>同源 iframe（递归内嵌）</h2>
+      <iframe src="iframe.html" width="100%" height="150" title="演示 iframe"></iframe>
+    </section>
+
+    <section>
+      <h2>脚本执行</h2>
+      <p id="js-status">脚本尚未执行</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>演示页 · 保存本页后断网打开，应保持原样且中文不乱码</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

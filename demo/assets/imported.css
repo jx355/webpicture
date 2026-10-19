@@ -1,0 +1,16 @@
+/* 被 @import 引入的样式表：验证 import 展平 */
+.imported-banner {
+  margin: 14px 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #eef3ff;
+  border: 1px solid #c7d7f5;
+  color: #315efb;
+  font-size: 13px;
+}
+
+.imported-banner::before {
+  content: "【@import 展平成功】";
+  font-weight: 500;
+  margin-right: 6px;
+}

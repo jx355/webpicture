@@ -1,0 +1,53 @@
+@import url("imported.css");
+
+/* 中文注释：本样式表为 UTF-8 编码，含 @import、url()、中文 content */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 20px;
+  font: 14px/1.7 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #222;
+  background: #fafafa;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.avatar { width: 56px; height: 56px; border-radius: 50%; }
+
+.site-header h1 { font-size: 20px; margin: 0; }
+
+.subtitle { margin: 2px 0 0; color: #888; font-size: 12px; }
+
+main { max-width: 760px; }
+
+h2 { font-size: 16px; margin: 22px 0 8px; }
+
+.img-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+
+.img-row img { border-radius: 8px; border: 1px solid #e5e5e5; }
+
+form { display: flex; flex-direction: column; gap: 8px; max-width: 420px; }
+
+input, select, textarea {
+  padding: 7px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font: inherit;
+}
+
+label { display: flex; align-items: center; gap: 6px; }
+
+.site-footer {
+  margin-top: 30px;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+  color: #999;
+  font-size: 12px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>网页快照保存器</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="ws-header">
+    <img class="ws-logo" src="../../assets/icons/icon48.png" alt="网页快照">
+    <div class="ws-header-text">
+      <h1>网页快照保存器</h1>
+      <p id="page-title" class="ws-page-title">读取中…</p>
+    </div>
+  </header>
+
+  <section class="ws-section">
+    <p id="page-url" class="ws-page-url">—</p>
+  </section>
+
+  <section class="ws-section">
+    <div class="ws-field">
+      <span class="ws-label">保存格式</span>
+      <div class="ws-radios" id="format-radios">
+        <label><input type="radio" name="format" value="auto" checked> 自动（推荐）</label>
+        <label><input type="radio" name="format" value="mhtml"> 原生 MHTML</label>
+        <label><input type="radio" name="format" value="html"> 单文件 HTML</label>
+      </div>
+      <p id="format-hint" class="ws-hint"></p>
+    </div>
+
+    <label class="ws-checkbox">
+      <input type="checkbox" id="banner-toggle" checked>
+      <span>加入"网页快照"标识横幅（保存时间 / 原始地址）</span>
+    </label>
+
+    <button id="save-btn" class="ws-btn-primary" type="button">保存当前网页</button>
+    <button id="grant-btn" class="ws-btn-secondary" type="button" hidden>启用原生 MHTML（授权）</button>
+  </section>
+
+  <section class="ws-section">
+    <div id="status" class="ws-status" hidden></div>
+  </section>
+
+  <section class="ws-section" id="recent-section">
+    <div class="ws-section-title">
+      <span>最近保存</span>
+      <a id="open-library" href="#">打开快照库 →</a>
+    </div>
+    <ul id="recent-list" class="ws-recent"></ul>
+  </section>
+
+  <footer class="ws-footer">
+    <span>快捷键 Alt + S</span>
+    <span>文件保存在 下载/webpage-snapshots/</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

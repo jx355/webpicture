@@ -1,0 +1,17 @@
+@charset "GBK";
+/* 中文注释：GBK 编码的样式表，服务端未声明 charset 时靠 @charset 识别 */
+body {
+  font: 14px/1.7 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #222;
+  background: #fafafa;
+  padding: 20px;
+}
+h1 { font-size: 20px; }
+.gbk-note {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fff7e6;
+  border: 1px solid #f5d9a0;
+  color: #8a5a00;
+}
+.gbk-note::before { content: "GBK 样式表生效："; font-weight: 500; }

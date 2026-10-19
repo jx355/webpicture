@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>演示 iframe 页面</title>
+  <style>
+    body { font: 13px/1.6 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; margin: 0; padding: 12px; color: #333; }
+    .iframe-box { display: flex; align-items: center; gap: 10px; background: #f4f8ff; border-radius: 8px; padding: 10px; }
+    .iframe-box img { width: 48px; height: 48px; border-radius: 50%; }
+  </style>
+</head>
+<body>
+  <div class="iframe-box">
+    <img src="assets/avatar.png" alt="徽标">
+    <div>
+      <strong>我是同源 iframe 内容</strong>
+      <p style="margin:4px 0 0;color:#666">保存快照时，我会被递归序列化进父页面的 srcdoc 中，断网打开依然可见。中文内容：网页快照、离线访问。</p>
+    </div>
+  </div>
+</body>
+</html>

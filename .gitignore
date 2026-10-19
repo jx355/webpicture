@@ -1,0 +1,11 @@
+# 依赖与缓存
+node_modules/
+__pycache__/
+*.pyc
+
+# 运行产物
+*.log
+.DS_Store
+
+# 测试临时目录
+tests/.tmp/

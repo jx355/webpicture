@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>快照库 - 网页快照保存器</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header class="ws-header">
+    <img class="ws-logo" src="../../assets/icons/icon48.png" alt="网页快照">
+    <div>
+      <h1>快照库</h1>
+      <p class="ws-sub">所有快照文件保存在浏览器下载目录的 webpage-snapshots/ 下，此处为索引与设置</p>
+    </div>
+  </header>
+
+  <nav class="ws-tabs">
+    <button class="ws-tab active" data-tab="library" type="button">快照库</button>
+    <button class="ws-tab" data-tab="settings" type="button">设置</button>
+  </nav>
+
+  <!-- ============ 快照库 ============ -->
+  <main id="tab-library" class="ws-tab-page">
+    <div class="ws-toolbar">
+      <input id="search-input" class="ws-search" type="search" placeholder="搜索标题或网址…">
+      <button id="export-btn" class="ws-btn-text" type="button">导出索引</button>
+      <button id="clear-btn" class="ws-btn-text danger" type="button">清空</button>
+    </div>
+    <table class="ws-table">
+      <thead>
+        <tr>
+          <th style="width:130px">保存时间</th>
+          <th>标题 / 网址</th>
+          <th style="width:80px">格式</th>
+          <th style="width:80px">大小</th>
+          <th style="width:90px">状态</th>
+          <th style="width:210px">操作</th>
+        </tr>
+      </thead>
+      <tbody id="history-body"></tbody>
+    </table>
+    <p id="empty-tip" class="ws-empty" hidden>暂无快照记录，去 popup 或按 Alt+S 保存第一个网页吧</p>
+  </main>
+
+  <!-- ============ 设置 ============ -->
+  <main id="tab-settings" class="ws-tab-page" hidden>
+    <div class="ws-form">
+      <div class="ws-form-row">
+        <label for="set-format">默认保存格式</label>
+        <select id="set-format">
+          <option value="auto">自动（Chrome 优先 MHTML，其它用单文件 HTML）</option>
+          <option value="mhtml">原生 MHTML（仅 Chrome，需授权）</option>
+          <option value="html">单文件 HTML（全浏览器通用）</option>
+        </select>
+      </div>
+      <div class="ws-form-row">
+        <label for="set-subdir">保存子目录</label>
+        <input id="set-subdir" type="text" value="webpage-snapshots" maxlength="60">
+        <p class="ws-form-tip">相对于浏览器下载目录，例如 webpage-snapshots</p>
+      </div>
+      <div class="ws-form-row">
+        <label for="set-max-asset">单资源体积上限（MB）</label>
+        <input id="set-max-asset" type="number" min="1" max="200" value="12">
+        <p class="ws-form-tip">超过上限的资源将被跳过（保留原地址），防止快照文件过大</p>
+      </div>
+      <div class="ws-form-row ws-check-row">
+        <label><input id="set-banner" type="checkbox" checked> 在快照中加入标识横幅（保存时间 / 原始地址）</label>
+      </div>
+      <div class="ws-form-row ws-check-row">
+        <label><input id="set-base" type="checkbox" checked> 注入 &lt;base href&gt;（快照中的相对链接仍指向原网站）</label>
+      </div>
+      <div class="ws-form-row ws-check-row">
+        <label><input id="set-ask" type="checkbox"> 每次下载时询问保存位置</label>
+      </div>
+      <div class="ws-form-row ws-check-row">
+        <label><input id="set-history" type="checkbox" checked> 记录快照历史（仅存于本机）</label>
+      </div>
+    </div>
+  </main>
+
+  <script src="options.js"></script>
+</body>
+</html>

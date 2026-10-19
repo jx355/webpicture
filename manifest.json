@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "网页快照保存器",
+  "version": "1.0.0",
+  "description": "一键把当前网页保存为自包含快照文件（MHTML / 单文件 HTML），离线打开不乱码、不依赖原网站。",
+  "permissions": ["contextMenus", "downloads", "offscreen", "scripting", "storage", "tabs"],
+  "optional_permissions": ["pageCapture"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "保存网页快照",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "options_page": "src/options/options.html",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "commands": {
+    "save-snapshot": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "保存当前网页为快照"
+    }
+  },
+  "minimum_chrome_version": "114"
+}

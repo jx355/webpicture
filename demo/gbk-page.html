@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="GBK">
+  <title>GBK 编码演示页 - 网页快照乱码测试</title>
+  <link rel="stylesheet" href="assets/style-gbk.css">
+  <style>
+    .gbk-hero {
+      height: 160px;
+      background-image: url('assets/photo.png');
+      background-size: cover;
+      border-radius: 10px;
+      margin: 12px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>GBK 编码页面（乱码测试）</h1>
+  <p>本页面以 GBK 编码输出，包含易乱码的中文内容：网页快照、防乱码、自包含、离线访问、百度快照式体验。</p>
+  <p>标点与特殊符号测试：《书名号》、【括号】、"引号"、——破折号、……省略号。</p>
+  <div class="gbk-hero"></div>
+  <p class="gbk-note">这段文字由 GBK 编码的 style-gbk.css 设置样式，验证 CSS 侧解码。</p>
+  <img src="assets/avatar.png" alt="徽标" width="64" height="64">
+  <p id="js-status">脚本尚未执行</p>
+  <script src="assets/app.js"></script>
+</body>
+</html>
